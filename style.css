@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-heading: 'Staatliches', cursive;
+  --ff-maining: 'Palanquin', sans-serif; 
+
+  --hue: 233;
+  --ch-heading: hsl(var(--hue), 17%, 62%);
+  --ch-small: hsl(var(--hue), 18%, 79%);
+  --cm-maining: hsl(var(--hue), 100%, 97%);
+  --fc-heading: hsl(var(--hue), 0%, 100%);
+  --fc-maining: hsl(var(--hue), 84%, 12%);
+  --fc-carding: hsl(var(--hue), 17%, 35%);
+  --fc-h2: hsl(var(--hue), 91%, 96%);
+  --fc-heading-efect: hsla(0, 0%, 0%, 0.25);
+
+  font-size: 62.5%;
+  --fs-info: 4.0rem;
+  --fs-main: 1.35rem;
+
+}
+
+body {
+  background: var(--cm-maining);
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 27.9rem;
+  background: var(--ch-heading);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height: 27.9rem;
+  margin-bottom: 3.1rem;
+}
+
+header img {
+  margin: 2.0rem auto 2.0rem;
+}
+
+.info {
+  font-family: var(--ff-heading);
+  color: var(--fc-heading);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: var(--fs-info);
+  line-height: 3.4rem;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 18%, 79%);
+  width: 38.4rem;
+  height: 4.9rem;
+  margin-bottom: 2.9rem;
+}
+
+p {
+  font-family: var(--ff-maining);
+  color: var(--fc-maining);
+  font-size: var(--fs-main);
+  line-height: 1.9rem;
+  width: 30.5rem;
+  text-align: center;
+  margin: 0 auto 6.3rem;
+}
+
+.page {
+  max-width: 32.0rem;
+  margin: 0 auto 5.3rem;
+  padding: 0; 
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.card img {
+  object-fit: cover;
+  border-radius: 2rem;
+  animation-name: downtop;
+  animation-duration: 700ms;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  border-radius: 2rem;
+  background-color: hsl(var(--hue), 91%, 96%);
+  font-size: 2rem;
+  line-height: 3.4rem;
+  font-family: var(--ff-heading);
+  letter-spacing: 5%;
+  font-weight: normal;
+  color: var(--fc-carding);
+  padding: 0.1rem 2.3rem;
+  animation-name: topdown;
+  animation-duration: 1200ms;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
